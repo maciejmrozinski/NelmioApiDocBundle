@@ -644,7 +644,9 @@
                                     value = $('#api_key').val();
                                 }
 
-                                xhr.setRequestHeader(api_key_parameter, value);
+                                if (value.length > 0) {
+                                    xhr.setRequestHeader(api_key_parameter, value);
+                                }
                             }
                         },
                         complete: function(xhr) {
